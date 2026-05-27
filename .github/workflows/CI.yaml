@@ -8,10 +8,18 @@ permissions:
   contents: read
 
 jobs:
-  nix-check:
+  pipeline:
     name: nix-check
     runs-on: ubuntu-latest
     steps:
+      - name: Free Disk Space
+        uses: jlumbroso/free-disk-space@main
+        with:
+          tool-cache: true
+
+      - uses: actions/checkout@v4
+      - uses: nixbuild/nix-quick-install-action@v30
+
       - name: Checkout
         uses: actions/checkout@v4
 
