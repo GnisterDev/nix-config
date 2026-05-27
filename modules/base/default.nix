@@ -13,7 +13,7 @@
 #   };
 # }
 
-{ ... }:
+_:
 {
   flake.modules.nixos.base = { imports = [
     ./git.nix

@@ -21,7 +21,7 @@ jobs:
       - uses: nixbuild/nix-quick-install-action@v30
 
       - name: Check linting
-        run: nix run .#statix check . -- --ignore hosts/*/hardware-configuration.nix
+        run: nix run nixpkgs#statix -- check . --ignore hosts/*/hardware-configuration.nix
 
       - name: nix flake check
         run: nix flake check --print-build-logs --no-update-lock-file
