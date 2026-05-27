@@ -1,78 +1,49 @@
 {
-  description = "NixOS system configurations";
+  description = "NixOS configuration — dendritic pattern with flake-parts";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixos-hardware.url = "github:nixos/nixos-hardware/master";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    sops-nix = {
-      url = "github:mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL/main";
+      url = "github:nix-community/NixOS-WSL";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixos-hardware.url = "github:NixOS/nixos-hardware";
+
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    niri-flake = {
+      url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, sops-nix, ... }@inputs:
-  let
-    system = "x86_64-linux";
+  outputs = inputs:
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+      ];
 
-    # Helper for workstation hosts (laptop + desktop)
-    mkWorkstation = hostname: isDesktop: extraModules:
-      nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/${hostname}
-          ./modules/common.nix
-          ./modules/workstation.nix
-          sops-nix.nixosModules.sops
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit inputs isDesktop; };
-            home-manager.users.gnister = import ./home/gnister;
-          }
-        ] ++ extraModules;
-      };
-
-    # Helper for headless/server hosts
-    mkServer = hostname: extraModules:
-      nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/${hostname}
-          ./modules/common.nix
-          sops-nix.nixosModules.sops
-        ] ++ extraModules;
-      };
-  in
-  {
-    nixosConfigurations = {
-      laptop  = mkWorkstation "laptop"  false [];
-      desktop = mkWorkstation "desktop" true  [];
-      server  = mkServer      "server"        [];
-      wsl = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [
-          inputs.nixos-wsl.nixosModules.default
-          ./hosts/wsl
-          ./modules/common.nix
-          # No workstation.nix - WSL has no display manager
-          sops-nix.nixosModules.sops
-        ];
-      };
+      imports = [
+        ./parts/aspects.nix
+        ./parts/modules.nix
+        ./parts/lib.nix
+        ./parts/configurations.nix
+      ];
     };
-  };
 }
