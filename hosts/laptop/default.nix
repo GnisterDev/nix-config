@@ -1,6 +1,6 @@
 { inputs, pkgs, ... }:
 {
-  flake.modules.nixos.wsl = {
+  flake.modules.nixos.laptop = {
     imports = with inputs.self.modules.nixos; [
       base
       cli
@@ -16,7 +16,6 @@
     };
 
     home-manager.users.gnister = {
-      # imports = [ inputs.self.modules.homeManager.wsl ];
       systemd.user.startServices = false;
       home.stateVersion = "25.05";
     };
