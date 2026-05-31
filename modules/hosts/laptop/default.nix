@@ -8,7 +8,7 @@ in
   flake.modules.nixos.${hostname} = { pkgs, ... }:
   {
     imports = with inputs.self.modules.nixos; [
-      git nh bootloader
+      common git nh bootloader
     ];
 
     home-manager = {
@@ -36,10 +36,6 @@ in
       isNormalUser = true;
       extraGroups  = [ "wheel" "networkmanager" "video" "audio" ];
     };
-
-    time.timeZone      = system.timeZone;
-    i18n.defaultLocale = system.defaultLocale;
-    i18n.extraLocaleSettings.LC_TIME = system.extraLocales.LC_TIME;
 
     services.fwupd.enable = true;
 
