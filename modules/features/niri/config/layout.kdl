@@ -1,0 +1,48 @@
+// ~/.config/niri/layout.kdl
+//
+// Layout settings: gaps, borders, column widths, focus ring, shadows.
+
+layout {
+  // Gap between windows (in logical pixels)
+  gaps 8
+
+  // Extra padding around the edge of each monitor
+  struts {
+    left   0
+    right  0
+    top    0
+    bottom 0
+  }
+
+  // Default column width — use "proportion" for relative sizing
+  default-column-width { proportion 0.5; }
+
+  // Center short windows (dialogs) horizontally
+  center-focused-column "never"
+
+  // ── Focus ring ────────────────────────────────────────────────────────────
+  // The glowing outline shown around the focused window
+  focus-ring {
+    width 2
+    // Catppuccin Mocha: lavender for active, surface2 for inactive
+    active-color   "#89b4fa"  // blue
+    inactive-color "#45475a"  // surface1
+  }
+
+  // ── Border ────────────────────────────────────────────────────────────────
+  // An additional inner border (disabled by default to keep things clean)
+  border {
+    off
+  }
+
+  // ── Shadow ────────────────────────────────────────────────────────────────
+  shadow {
+    on
+    softness 30
+    spread   5
+    offset-x 0
+    offset-y 5
+    draw-behind-window true
+    color "#0000007a"
+  }
+}

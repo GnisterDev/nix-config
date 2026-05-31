@@ -1,0 +1,42 @@
+// ~/.config/niri/rules.kdl
+//
+// Window rules — match windows by app-id or title and override their
+// default behaviour (float, open on workspace, set size, etc.).
+//
+// To find the app-id and title of a window, run:
+//   niri msg windows
+
+window-rule {
+  // Floating windows: dialogs, preferences, password prompts
+  match app-id="org.gnome.Nautilus" title="Preferences"
+  match app-id="pavucontrol"
+  match app-id="nm-connection-editor"
+  match title="Open File"
+  match title="Save File"
+  match title="Save As"
+
+  open-floating true
+}
+
+window-rule {
+  // Picture-in-picture: keep on top and float
+  match title="Picture in Picture"
+  match title="Picture-in-Picture"
+
+  open-floating true
+  open-on-output "eDP-1"  // keep it on the main screen
+}
+
+window-rule {
+  // Firefox — open on workspace 2
+  match app-id="firefox"
+  open-on-workspace "2"
+}
+
+window-rule {
+  // Foot terminals in scratchpad-like floating mode when launched with title
+  match app-id="foot" title="scratch"
+  open-floating true
+  default-column-width { fixed 900; }
+  default-window-height { fixed 600; }
+}
