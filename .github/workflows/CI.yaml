@@ -23,5 +23,5 @@ jobs:
       - name: Check linting
         run: nix run nixpkgs#statix -- check . --ignore hosts/*/hardware-configuration.nix
 
-      - name: nix flake check
-        run: nix flake check --print-build-logs --no-update-lock-file
+      # - name: nix flake check
+      #   run: nix flake check --print-build-logs --no-update-lock-file

@@ -19,9 +19,11 @@ in
         imports = with inputs.self.modules.homeManager; [
           # lazygit
         ];
-        home.username      = username;
-        home.homeDirectory = "/home/${username}";
-        home.stateVersion  = system.version;
+        home = {
+          inherit username;
+          homeDirectory = "/home/${username}";
+          stateVersion  = system.version;
+        };
       };
     };
 
