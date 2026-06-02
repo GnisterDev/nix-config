@@ -1,7 +1,4 @@
 { inputs, ... }:
-let
-  userConstants = inputs.self.constants.user;
-in
 {
   flake.modules.nixos.git = { pkgs, ... }: {
     environment.systemPackages = [ pkgs.git ];
@@ -15,8 +12,8 @@ in
       enable = true;
       settings = {
         user = {
-          name = userConstants.username;
-          email = userConstants.email;
+          name = inputs.self.constants.user.username;
+          email = inputs.self.constants.user.email;
         };
 
         init.defaultBranch = "main";
