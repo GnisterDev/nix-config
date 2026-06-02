@@ -11,7 +11,7 @@ in
       bootloader
       common git nh shell btop
       niri alacritty
-    ] ++ [ ./hardware-configuration.nix ];
+    ];
 
     home-manager = {
       useGlobalPkgs   = true;
@@ -54,5 +54,9 @@ in
     system.stateVersion = system.version;
   };
 
-  flake.nixosConfigurations = inputs.self.lib.mkNixos "x86_64-linux" hostname;
-}
+  flake.nixosConfigurations = inputs.self.lib.mkNixos {
+    system = "x86_64-linux";
+    name = hostname;
+    hardware = ./_filesystem.nix;
+  };
+} 

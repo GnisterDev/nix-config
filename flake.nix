@@ -18,7 +18,7 @@
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } {
     imports = [
       inputs.flake-parts.flakeModules.modules
-      (inputs.import-tree ./modules)
+      (inputs.import-tree [./hosts ./modules])
     ];
   };
 }
