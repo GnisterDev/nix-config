@@ -6,7 +6,7 @@
 
   flake.modules.homeManager.btop = { pkgs, ... }: {
     programs.btop = {
-      enable      = true;
+      enable   = true;
       settings = {
         color_theme = "onedark";
         theme_background = false;
