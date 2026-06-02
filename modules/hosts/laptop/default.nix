@@ -8,8 +8,8 @@ in
   flake.modules.nixos.${hostname} = { pkgs, ... }:
   {
     imports = with inputs.self.modules.nixos; [
-      common git nh bootloader
-    ];
+      common git nh bootloader niri
+    ] ++ [ ./hardware-configuration.nix ];
 
     home-manager = {
       useGlobalPkgs   = true;

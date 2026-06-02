@@ -7,7 +7,7 @@
   flake.modules.homeManager.forefox = { pkgs, ... }: {
     programs.forefox = {
       enable = true;
-      languagePacks = ["en-GB" "en-US" "nb-NO"]
+      languagePacks = ["en-GB" "en-US" "nb-NO"];
     };
   };
 }
