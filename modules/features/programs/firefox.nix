@@ -1,4 +1,4 @@
-_:
+{ inputs, ... }:
 {
   flake.modules.nixos.forefox = {pkgs, ...}: {
     environment.systemPackages = [ pkgs.forefox ];
