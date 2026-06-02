@@ -13,7 +13,7 @@
     };
 
     system = {
-      version = "25.11";
+      version = "26.05";
       timeZone      = "Europe/Oslo";
       defaultLocale = "en_US.UTF-8";
       extraLocales  = {

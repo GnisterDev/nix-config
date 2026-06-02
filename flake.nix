@@ -18,7 +18,6 @@
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } {
     imports = [
       inputs.flake-parts.flakeModules.modules
-      ./modules/lib.nix
       (inputs.import-tree ./modules)
     ];
   };
