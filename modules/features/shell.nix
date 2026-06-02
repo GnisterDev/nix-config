@@ -9,6 +9,7 @@
 
     environment.systemPackages = with pkgs; [
       zsh
+      nerd-fonts.fira-code
     ];
 
     home-manager.sharedModules = [
@@ -31,15 +32,19 @@
       };
 
       shellAliases = {
+        cls = "clear";
+        
         ls  = "ls --color=auto";
         ll  = "ls -lah";
         la  = "ls -A";
         ".." = "cd ..";
         "..." = "cd ../..";
+
         gs  = "git status";
         gc  = "git commit";
         gp  = "git push";
         gpl = "git pull";
+        
         nb  = "nh os switch";
       };
     };
