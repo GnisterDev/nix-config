@@ -47,9 +47,9 @@ in
     };
     services.blueman.enable = true;
 
-    fonts.packages = with pkgs; [
-      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-    ];
+    # fonts.packages = with pkgs; [
+    #   (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    # ];
 
     system.stateVersion = system.version;
   };

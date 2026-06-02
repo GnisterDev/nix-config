@@ -8,7 +8,7 @@ in
   flake.modules.nixos.${hostname} = { pkgs, ... }: 
   {
     imports = with inputs.self.modules.nixos; [
-      git nh shell btop
+      common git nh shell btop
     ];
 
     home-manager = {
