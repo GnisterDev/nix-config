@@ -5,7 +5,7 @@
 
     programs.niri = {
       enable  = true;
-      # package = inputs.niri.packages.${pkgs.system}.niri;
+      package = inputs.niri.packages.${pkgs.system}.niri-stable;
     };
 
     xdg.portal = {
