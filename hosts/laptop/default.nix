@@ -45,11 +45,8 @@ in
       enable      = true;
       powerOnBoot = false;
     };
+    
     services.blueman.enable = true;
-
-    # fonts.packages = with pkgs; [
-    #   (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-    # ];
 
     system.stateVersion = system.version;
   };

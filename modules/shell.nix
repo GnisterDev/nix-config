@@ -9,7 +9,6 @@
 
     environment.systemPackages = with pkgs; [
       zsh
-      nerd-fonts.fira-code
     ];
 
     home-manager.sharedModules = [
