@@ -9,6 +9,7 @@ in
   {
     imports = with inputs.self.modules.nixos; [
       common git nh shell btop
+      secrets
     ];
 
     home-manager = {

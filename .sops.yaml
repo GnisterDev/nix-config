@@ -1,0 +1,7 @@
+keys:
+  - &wsl  age1dyj5762afjp0lw9ydw4cy8hegqpvxayfe4tzfrlt4y02gr23m5zsgdqh78
+creation_rules:
+  - path_regex: secrets/[^/]+\.yaml$
+    key_groups:
+      - age:
+          - *wsl

@@ -11,6 +11,7 @@ in
       bootloader
       common git nh shell btop
       niri alacritty
+      secrets
     ] ++ [ ./_filesystem.nix ];
 
     home-manager = {
