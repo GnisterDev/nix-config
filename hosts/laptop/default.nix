@@ -10,8 +10,10 @@ in
     imports = with inputs.self.modules.nixos; [
       bootloader
       common git nh shell btop
-      niri alacritty
+
       secrets
+      
+      niri alacritty firefox libreoffice
     ] ++ [ ./_filesystem.nix ];
 
     home-manager = {
