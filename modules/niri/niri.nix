@@ -10,7 +10,7 @@
 
     xdg.portal = {
       enable        = true;
-      extraPortals  = [ pkgs.xdg-desktop-portal-gnome ];
+      extraPortals  = [ pkgs.xdg-desktop-portal-gtk ]; # or `pkgs.xdg-desktop-portal-gnome`  
       config.common.default = "*";
     };
 
@@ -27,7 +27,7 @@
     environment.systemPackages = with pkgs; [
       waybar brightnessctl playerctl
       wofi mako swaylock swayidle
-      wl-clipboard grim slurp
+      wl-clipboard grim slurp awww
     ];
 
     home-manager.sharedModules = [
