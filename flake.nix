@@ -11,7 +11,7 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware";
 
     niri.url = "github:sodiboo/niri-flake";
-    sops-nix.url = "github:/Mic92/sops-nix";
+    sops-nix.url = "github:Mic92/sops-nix";
     nh.url = "github:viperML/nh";
   };
 
