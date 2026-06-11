@@ -18,8 +18,8 @@ _:
 
       fontconfig = {
         defaultFonts = {
-          serif      = [ "Noto Serif"              "Liberation Serif" ];
-          sansSerif  = [ "Inter"                   "Noto Sans"        "Liberation Sans" ];
+          serif      = [ "Noto Serif" "Liberation Serif" ];
+          sansSerif  = [ "Inter" "Noto Sans" "Liberation Sans" ];
           monospace  = [ "FiraCode Nerd Font" "JetBrainsMono Nerd Font" ];
           emoji      = [ "Noto Color Emoji" ];
         };
