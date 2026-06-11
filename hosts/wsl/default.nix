@@ -17,9 +17,6 @@ in
       useUserPackages = true;
 
       users.gnister = {
-        imports = with inputs.self.modules.homeManager; [
-          # lazygit
-        ];
         home = {
           inherit username;
           homeDirectory = "/home/${username}";
