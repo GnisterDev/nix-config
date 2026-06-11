@@ -1,32 +1,15 @@
-// ~/.config/niri/outputs.kdl
-//
-// Monitor / output configuration.
-//
-// This file is the most machine-specific part of the niri config.
-// The default here is a reasonable fallback; individual hosts can provide
-// their own outputs.kdl via a host-specific Home-Manager overlay if needed.
-//
-// To find your output names, run:
-//   niri msg outputs
-// or:
-//   wlr-randr
+// niri msg outputs
+// wlr-randr
 
-// Fallback: let niri decide positioning automatically.
-// Remove this block and add named outputs below for a fixed setup.
 
-// Example: laptop built-in screen
 // output "eDP-1" {
 //   mode "2560x1600@165.003"
 //   scale 2.0
 //   position x=0 y=0
 // }
 
-// Example: external monitor to the right of the laptop
 // output "DP-1" {
 //   mode "2560x1440@144.001"
 //   scale 1.0
 //   position x=1280 y=0  // half of 2560/scale for the left display
 // }
-
-// Sensible default: automatic layout, everything enabled
-// (niri will arrange outputs in order of connection)

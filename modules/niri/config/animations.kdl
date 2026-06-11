@@ -1,14 +1,5 @@
-// ~/.config/niri/animations.kdl
-//
-// Animation settings.
-// niri has smooth animations for window open/close, workspace switch, etc.
-// Reduce or disable if you prefer a snappier feel or have accessibility needs.
-
 animations {
-  // Uncomment to disable all animations:
-  // off
-
-  slowdown 0.8  // global speed multiplier (< 1 = faster, > 1 = slower)
+  slowdown 0.8
 
   workspace-switch {
     spring damping-ratio=1.0 stiffness=1000 epsilon=0.0001

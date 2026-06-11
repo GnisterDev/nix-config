@@ -1,4 +1,3 @@
-/* Catppuccin Mocha waybar theme */
 * {
   font-family: "JetBrainsMono Nerd Font", monospace;
   font-size: 13px;
@@ -8,18 +7,18 @@
 }
 
 window#waybar {
-  background-color: rgba(30, 30, 46, 0.9);  /* base */
-  color: #cdd6f4;                             /* text */
+  background-color: rgba(30, 30, 46, 0.9);
+  color: #cdd6f4;
 }
 
 #workspaces button {
   padding: 0 6px;
-  color: #6c7086;  /* overlay0 */
+  color: #6c7086;
   background: transparent;
 }
 
 #workspaces button.active {
-  color: #89b4fa;  /* blue */
+  color: #89b4fa;
 }
 
 #workspaces button:hover {
@@ -37,10 +36,15 @@ window#waybar {
   color: #cdd6f4;
 }
 
-#battery.warning  { color: #f9e2af; }
-#battery.critical { color: #f38ba8; }
+#battery.warning {
+  color: #f9e2af;
+}
+
+#battery.critical {
+  color: #f38ba8;
+}
 
 #window {
   padding: 0 8px;
-  color: #a6adc8;  /* subtext0 */
+  color: #a6adc8;
 }

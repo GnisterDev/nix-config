@@ -1,10 +1,3 @@
-// ~/.config/niri/config.kdl
-//
-// Main niri configuration file.
-// This file acts as the entry point and includes all other split config files.
-// Having separate files makes it easy to override just one aspect per machine
-// (e.g. outputs.kdl differs between laptop and desktop).
-
 include "outputs.kdl"
 include "input.kdl"
 include "layout.kdl"
@@ -12,13 +5,10 @@ include "keybinds.kdl"
 include "rules.kdl"
 include "animations.kdl"
 
-// ── Miscellaneous top-level settings ────────────────────────────────────────
-
-prefer-no-csd  // Ask windows to draw without client-side decorations
+prefer-no-csd
 
 screenshot-path "~/Pictures/Screenshots/Screenshot_%Y-%m-%d_%H-%M-%S.png"
 
-// Spawn these programs when niri starts
 spawn-at-startup "waybar"
 spawn-at-startup "mako"
 spawn-at-startup "swayidle" "-w" \

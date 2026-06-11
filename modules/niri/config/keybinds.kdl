@@ -1,23 +1,18 @@
-// ~/.config/niri/keybinds.kdl
-//
-// Keyboard shortcuts.
-// Mod = Super (Windows key) by default in niri.
-
 binds {
-  // ── Session ───────────────────────────────────────────────────────────────
+  // Session
   Mod+Shift+E     { quit; }
   Mod+Shift+P     { power-off-monitors; }
   Ctrl+Alt+L      { spawn "swaylock" "-f"; }
 
-  // ── Launch applications ───────────────────────────────────────────────────
-  Mod+Return      { spawn "foot"; }          // terminal
-  Mod+D           { spawn "wofi" "--show" "drun"; }  // app launcher
+  // Launch applications
+  Mod+Return      { spawn "foot"; }
+  Mod+D           { spawn "wofi" "--show" "drun"; }
   Mod+B           { spawn "firefox"; }
   Print           { screenshot; }
   Shift+Print     { screenshot-window; }
   Ctrl+Print      { screenshot-screen; }
 
-  // ── Window / column management ────────────────────────────────────────────
+  // Window / column management
   Mod+Q           { close-window; }
   Mod+F           { maximize-column; }
   Mod+Shift+F     { fullscreen-window; }
@@ -49,7 +44,7 @@ binds {
   Mod+Shift+Minus { set-window-height "-10%"; }
   Mod+Shift+Equal { set-window-height "+10%"; }
 
-  // ── Workspaces ────────────────────────────────────────────────────────────
+  // Workspaces
   Mod+1           { focus-workspace 1; }
   Mod+2           { focus-workspace 2; }
   Mod+3           { focus-workspace 3; }
@@ -73,7 +68,7 @@ binds {
   Mod+Tab         { focus-workspace-down; }
   Mod+Shift+Tab   { focus-workspace-up; }
 
-  // ── Media / hardware keys ─────────────────────────────────────────────────
+  // Media / hardware keys
   XF86AudioRaiseVolume  { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+"; }
   XF86AudioLowerVolume  { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
   XF86AudioMute         { spawn "wpctl" "set-mute"   "@DEFAULT_AUDIO_SINK@" "toggle"; }
