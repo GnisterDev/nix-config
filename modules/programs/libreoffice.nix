@@ -1,7 +1,7 @@
 { inputs, ... }:
 {
   flake.modules.nixos.libreoffice = {pkgs, ...}: {
-    environment.systemPackages = with pkgs [
+    environment.systemPackages = with pkgs; [
       libreoffice
 
       hunspell
