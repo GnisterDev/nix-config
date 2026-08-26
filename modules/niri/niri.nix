@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, config, ... }:
 {
   flake.modules.nixos.niri = { pkgs, ... }: {
     imports = [ inputs.niri.nixosModules.niri ];
@@ -6,6 +6,11 @@
     programs.niri = {
       enable  = true;
       package = inputs.niri.packages.${pkgs.system}.niri-stable;
+    };
+
+    services.greetd.settings.default_session = {
+      command = "${inputs.niri.packages.${pkgs.system}.niri-stable}/bin/niri-session";
+      user = "greeter";
     };
 
     xdg.portal = {

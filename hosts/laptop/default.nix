@@ -14,6 +14,7 @@ in
       secrets
       
       niri alacritty firefox libreoffice
+      greetd theme
     ] ++ [ ./_filesystem.nix ];
 
     home-manager = {
