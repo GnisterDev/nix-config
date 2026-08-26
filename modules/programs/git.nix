@@ -1,7 +1,7 @@
 { inputs, ... }:
 {
   flake.modules.nixos.git = { pkgs, ... }: {
-    environment.systemPackages = [ pkgs.git ];
+    environment.systemPackages = [ pkgs.git pkgs.lazygit ];
     home-manager.sharedModules = [
       inputs.self.modules.homeManager.git
     ];
@@ -30,6 +30,10 @@
         diff.colorMoved     = "default";
       };
     };
+    programs.lazygit = {
+      enable = true;
+    };
+
     home.packages = [ pkgs.delta ];
   };
 }

@@ -44,6 +44,7 @@
           gc  = "git commit";
           gp  = "git push";
           gpl = "git pull";
+          lg = "lazygit";
           
           nb  = "nh os switch";
         };
@@ -70,8 +71,8 @@
             format = "[$duration]($style) ";
           };
           character = {
-            success_symbol = "[❯](green)";
-            error_symbol   = "[❯](red)";
+            success_symbol = "[❯](bold green)";
+            error_symbol   = "[❯](bold red)";
           };
         };
       };
