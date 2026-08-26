@@ -39,14 +39,6 @@
     xdg.configFile.niri = {
       source    = inputs.self.lib.checkKDLDir pkgs ./config "config.kdl";
       recursive = true;
-      # "niri/outputs.kdl".source   = ./config/outputs.kdl;
-      # "niri/keybinds.kdl".source  = ./config/keybinds.kdl;
-      # "niri/layout.kdl".source    = ./config/layout.kdl;
-      # "niri/rules.kdl".source     = ./config/rules.kdl;
-      # "niri/input.kdl".source     = ./config/input.kdl;
-      # "niri/animations.kdl".source = ./config/animations.kdl;
-      # "waybar/config".text        = builtins.readFile ./config/waybar-config.json;
-      # "waybar/style.css".text     = builtins.readFile ./config/waybar-style.css;
     };
   };
 }
