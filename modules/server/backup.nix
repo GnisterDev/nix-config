@@ -1,4 +1,4 @@
-# Nightly restic backups. 
+# Nightly restic backups.
 # Add secrets to secrets/secrets.yaml (and the server's key to .sops.yaml):
 #
 #   restic:

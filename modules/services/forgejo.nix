@@ -1,4 +1,4 @@
-# Self-hosted git at https://git.<domain>, backed by PostgreSQL. 
+# Self-hosted git at https://git.<domain>, backed by PostgreSQL.
 # Registration is closed; create the first admin with:
 #   sudo -u forgejo forgejo admin user create --admin --username <you> --email <mail> \
 #     --random-password --config /var/lib/forgejo/custom/conf/app.ini

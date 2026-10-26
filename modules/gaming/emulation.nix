@@ -8,14 +8,14 @@
         itch
         steamcmd
 
-        retroarch   # NES, SNES, Genesis, Arcade, etc
+        retroarch # NES, SNES, Genesis, Arcade, etc
         dolphin-emu # Nintendo GameCube / Wii
-        pcsx2       # PlayStation 2
-        rpcs3       # PlayStation 3
-        ppsspp      # PSP
+        pcsx2 # PlayStation 2
+        rpcs3 # PlayStation 3
+        ppsspp # PSP
 
-        vkbasalt    # Vulkan post-processing FX layer
-        goverlay    # GUI overlay configurator for MangoHud / vkBasalt
+        vkbasalt # Vulkan post-processing FX layer
+        goverlay # GUI overlay configurator for MangoHud / vkBasalt
       ];
     };
 }

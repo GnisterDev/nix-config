@@ -1,6 +1,11 @@
 # Hosts declare `configurations.nixos.<name>.module`
 # This turns each one into `nixosConfigurations.<name>`.
-{ config, inputs, lib, ... }:
+{
+  config,
+  inputs,
+  lib,
+  ...
+}:
 {
   options.configurations.nixos = lib.mkOption {
     type = lib.types.lazyAttrsOf (

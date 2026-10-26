@@ -1,4 +1,4 @@
-# A private SMB share at \\server\share (/srv/share), discoverable from Windows. 
+# A private SMB share at \\server\share (/srv/share), discoverable from Windows.
 # SMB password: sudo smbpasswd -a <user>
 { config, ... }:
 let

@@ -1,4 +1,4 @@
-# File sync as the main user. 
+# File sync as the main user.
 # Devices and folders are managed in the web UI.
 # SSH tunnel: ssh -L 8384:127.0.0.1:8384 server
 { config, ... }:

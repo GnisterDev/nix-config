@@ -23,9 +23,8 @@
         enable32Bit = true;
       };
 
-
       services.joycond.enable = true;
-      
+
       users.users.${config.constants.user.username}.extraGroups = [ "gamemode" ];
     };
 
