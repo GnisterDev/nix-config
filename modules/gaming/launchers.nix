@@ -4,10 +4,10 @@
     { pkgs, ... }:
     {
       home.packages = with pkgs; [
-         lutris # open-source game platform / launcher
-         heroic # Epic Games, GOG & Amazon Prime launcher
-         wineWow64Packages.stagingFull # Windows API compatibility layer
-         winetricks # helper script to install Wine dependencies
+        lutris # open-source game platform / launcher
+        heroic # Epic Games, GOG & Amazon Prime launcher
+        wineWow64Packages.stagingFull # Windows API compatibility layer
+        winetricks # helper script to install Wine dependencies
       ];
     };
 }
