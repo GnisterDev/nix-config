@@ -9,8 +9,6 @@
 { config, ... }:
 {
   flake.modules.nixos.laptop = {
-    boot.initrd.systemd.enable = true;
-
     security.tpm2 = {
       enable = true;
       pkcs11.enable = true;
