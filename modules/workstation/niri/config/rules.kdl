@@ -1,0 +1,45 @@
+window-rule {
+    match app-id="org.gnome.Nautilus" title="Preferences"
+    match app-id="pavucontrol"
+    match app-id="org.pulseaudio.pavucontrol"
+    match app-id="nm-connection-editor"
+    match app-id=".blueman-manager-wrapped"
+    match app-id="org.gnome.FileRoller"
+    match title="Open File"
+    match title="Save File"
+    match title="Save As"
+
+    open-floating true
+}
+
+window-rule {
+    match title="Picture in Picture"
+    match title="Picture-in-Picture"
+
+    open-floating true
+    open-on-output "eDP-1"
+}
+
+window-rule {
+    match app-id="foot" title="scratch"
+    open-floating true
+    default-column-width { fixed 900; }
+    default-window-height { fixed 600; }
+}
+
+// Keep secrets out of screen shares and recordings.
+window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id="signal"
+    block-out-from "screen-capture"
+}
+
+// `open-on-workspace` needs a *named* workspace, e.g.
+//   workspace "web"
+//   window-rule { match app-id="firefox"; open-on-workspace "web"; }
+
+// The wallpaper shows behind the overview.
+layer-rule {
+    match namespace="^awww-daemon"
+    place-within-backdrop true
+}

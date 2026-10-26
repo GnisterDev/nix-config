@@ -1,0 +1,25 @@
+include "outputs.kdl"
+include "input.kdl"
+include "layout.kdl"
+include "keybinds.kdl"
+include "rules.kdl"
+include "animations.kdl"
+
+// Profile override
+include "rice.kdl"
+
+// Untracked, per-machine experiments. 
+// ~/.config/niri/local.kdl
+include optional=true "local.kdl"
+
+prefer-no-csd
+
+screenshot-path "~/Pictures/Screenshots/Screenshot_%Y-%m-%d_%H-%M-%S.png"
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+environment {
+    ELECTRON_OZONE_PLATFORM_HINT "auto"
+}

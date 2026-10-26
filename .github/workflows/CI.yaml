@@ -1,0 +1,28 @@
+name: flake-check
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: format, lint, evaluate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Free disk space
+        uses: jlumbroso/free-disk-space@main
+        with:
+          tool-cache: true
+
+      - uses: actions/checkout@v4
+      - uses: nixbuild/nix-quick-install-action@v30
+
+      - name: Formatting (nixfmt)
+        run: nix shell --inputs-from . nixpkgs#nixfmt -c sh -c 'git ls-files "*.nix" | xargs nixfmt --check'
+
+      # Builds checks.lint (statix + deadnix), evaluates every host.
+      - name: nix flake check
+        run: nix flake check --print-build-logs
